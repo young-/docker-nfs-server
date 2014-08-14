@@ -5,7 +5,7 @@ set -e
 mounts="${@}"
 
 if [[ -z $PARAMS ]]; then
-  PARAMS="*(rw,sync,no_subtree_check,fsid=0,no_root_squash)"
+  PARAMS="*(rw,sync,no_root_squash,no_subtree_check,insecure)"
 fi
 
 # Specify mounts via --env-file using a list of EXPORT variables
