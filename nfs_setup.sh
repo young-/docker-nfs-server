@@ -18,6 +18,7 @@ done
 for mnt in "${mounts[@]}"; do
   src=$(echo $mnt | awk -F':' '{ print $1 }')
   echo "$src $PARAMS" >> /etc/exports
+  echo "Added: $src $PARAMS"
 done
 
 
