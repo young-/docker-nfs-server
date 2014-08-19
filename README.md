@@ -2,7 +2,7 @@ Docker NFS Server
 ================
 
 ##Suggested host properties
-In the following setup the host is Ubuntu Trusty. I have also added `nfs` and `nfsd` to `/etc/modules` so these can be loaded at boottime. You do not need this if your dist hav the modules compiled into the kernel.
+In the following setup the host is Ubuntu Trusty. I have also added `nfs` and `nfsd` to `/etc/modules` so these can be loaded at boottime. You do not need this if your dist have the modules compiled into the kernel.
 
 Usage
 ----
