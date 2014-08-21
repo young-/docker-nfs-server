@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM debian:jessie
 RUN apt-get update -qq && apt-get install -y nfs-kernel-server runit inotify-tools -qq
 RUN mkdir -p /exports
 
