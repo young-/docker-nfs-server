@@ -4,9 +4,7 @@ set -e
 
 mounts="${@}"
 
-if [[ -z $PARAMS ]]; then
-  PARAMS="*(rw,sync,no_root_squash,no_subtree_check,insecure)"
-fi
+PARAMS="${PARAMS:-*(rw,sync,no_root_squash,no_subtree_check,insecure)}"
 
 # Specify mounts via --env-file using a list of EXPORT variables
 # EXPORT1="/export 10.0.0.1(ro,sync,no_subtree_check,insecure)"
