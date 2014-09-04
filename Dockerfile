@@ -7,6 +7,8 @@ ADD nfs.init /etc/sv/nfs/run
 ADD nfs.stop /etc/sv/nfs/finish
 
 ADD nfs_setup.sh /usr/local/bin/nfs_setup
+ADD nfs-common /etc/default/nfs-common
+ADD nfs-kernel-server /etc/default/nfs-kernel-server
 
 VOLUME /exports
 
