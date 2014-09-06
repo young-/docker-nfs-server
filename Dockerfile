@@ -1,5 +1,9 @@
 FROM debian:jessie
-RUN apt-get update -qq && apt-get install -y nfs-kernel-server runit inotify-tools -qq
+
+# runit 2.1.2.1-1 expect the following file to exist, if not it breaks build.
+# Issue is not in wheezy
+RUN touch /etc/inittab
+RUN apt-get update && apt-get install -y nfs-kernel-server runit inotify-tools
 RUN mkdir -p /exports
 
 RUN mkdir -p /etc/sv/nfs
