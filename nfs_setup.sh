@@ -2,7 +2,7 @@
 
 set -e
 
-mounts="${@}"
+mounts=(${@})
 
 PARAMS="${PARAMS:-*(rw,sync,no_root_squash,no_subtree_check,insecure)}"
 
