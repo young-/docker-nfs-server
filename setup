@@ -21,6 +21,17 @@ for mnt in "${mounts[@]}"; do
   echo "Added: $src $PARAMS"
 done
 
+function clean_up {
+    service nfs-kernel-server stop
+    kill $(pidof rpcbind)
+    exit 0
+}
+trap clean_up SIGHUP SIGINT SIGTERM
 
+. /etc/default/nfs-kernel-server
+. /etc/default/nfs-common
 
-exec runsvdir /etc/service
+rpcbind
+service nfs-kernel-server start
+
+inotifywait -m /exports & wait
