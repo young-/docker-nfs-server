@@ -6,9 +6,9 @@ RUN touch /etc/inittab
 RUN apt-get update && apt-get install -y nfs-kernel-server runit inotify-tools
 RUN mkdir -p /exports
 
-RUN mkdir -p /etc/sv/nfs
-ADD nfs.init /etc/sv/nfs/run
-ADD nfs.stop /etc/sv/nfs/finish
+RUN mkdir -p /etc/service/nfs
+ADD nfs.init /etc/service/nfs/run
+ADD nfs.stop /etc/service/nfs/finish
 
 ADD nfs_setup.sh /usr/local/bin/nfs_setup
 ADD nfs-common /etc/default/nfs-common

@@ -23,4 +23,4 @@ done
 
 
 
-exec runsvdir /etc/sv
+exec runsvdir /etc/service
