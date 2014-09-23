@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get install -y nfs-kernel-server inotify-tools
+RUN apt-get update && apt-get install -y nfs-kernel-server inotify-tools kmod
 RUN mkdir -p /exports
 
 ADD setup /
