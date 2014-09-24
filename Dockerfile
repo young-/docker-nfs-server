@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get install -y nfs-kernel-server inotify-tools libautodie-perl kmod
+RUN apt-get update && apt-get install -y nfs-kernel-server inotify-tools
 RUN mkdir -p /exports
 
 ADD setup /
