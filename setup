@@ -4,7 +4,8 @@ set -e
 
 mounts=(${@})
 
-PARAMS="${PARAMS:-*(rw,sync,no_root_squash,no_subtree_check,insecure)}"
+HOSTS="${HOSTS:-*}"
+PARAMS="${PARAMS:-(rw,sync,no_root_squash,no_subtree_check,insecure)}"
 
 # Specify mounts via --env-file using a list of EXPORT variables
 # EXPORT1="/export 10.0.0.1(ro,sync,no_subtree_check,insecure)"
@@ -17,8 +18,8 @@ done
 
 for mnt in "${mounts[@]}"; do
   src=$(echo $mnt | awk -F':' '{ print $1 }')
-  echo "$src $PARAMS" >> /etc/exports
-  echo "Added: $src $PARAMS"
+  echo "$src $HOSTS$PARAMS" >> /etc/exports
+  echo "Added: $src $HOSTS$PARAMS"
 done
 
 function clean_up {
